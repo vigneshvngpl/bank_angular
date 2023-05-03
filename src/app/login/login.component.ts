@@ -7,20 +7,20 @@ import { Component,OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
-  
+ uname:any
+ psw:any 
 
 constructor() {}
   ngOnInit(): void {
 
   }
-login(){
-  alert("login Clicked")
+login(a:any,b:any){
+  
+  this.uname=a.value
+  this.psw=b.value
+  console.log(this.uname,this.psw);
+  
 }
-  unameChange(event:any){
-
-    console.log(event.target.value);
-    
-  }
 
   
 

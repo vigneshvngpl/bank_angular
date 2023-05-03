@@ -11,7 +11,7 @@
   <h5 class="mt-4 ms-4">Login Account</h5>
       <div class="wrapper">
         <div class="input-data">
-            <input (change)="unameChange($event)" type="text" required>
+            <input #uname type="text" required>
             <div class="underline"></div>
             <label >Username</label>
         </div>
@@ -19,14 +19,14 @@
     </div>
     <div class="wrapper">
       <div class="input-data">
-          <input type="password" required>
+          <input #psw type="password" required>
           <div class="underline"></div>
           <label >Password</label>
       </div>
 
   </div>
   <h6 class="ms-4">Not Registered? <a href=""></a>Create account</h6>
-  <button (click)="login()"  class="btn" style="background-color: purple; margin-left: 75%; color: white;">Login</button>
+  <button (click)="login(uname,psw)"  class="btn" style="background-color: purple; margin-left: 75%; color: white;">Login</button>
   
 </div>
 
