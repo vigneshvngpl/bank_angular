@@ -7,10 +7,6 @@ export class DataService {
 
   constructor() { }
 
-sdata="service data"
 
-checkData(){
-  return "hello hi"
-}
 
 }
