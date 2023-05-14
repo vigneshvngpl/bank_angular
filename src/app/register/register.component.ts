@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { FormArrayName, FormBuilder, Validators } from '@angular/forms';
+import { DataService } from '../service/data.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -14,7 +16,10 @@ export class RegisterComponent {
 ngOnInit():void{
   
 }
-constructor(private fb:FormBuilder){}
+
+pswCheck:any=false
+
+constructor(private fb:FormBuilder,private ds:DataService,private router:Router ){}
 
 
 registerForm=this.fb.group({
@@ -28,10 +33,22 @@ register(){
 
   if(this.registerForm.valid){
     if(this.registerForm.value.psw==this.registerForm.value.cpsw){
-      alert("register works")
+      this.ds.registerApi(
+        this.registerForm.value.acno,
+        this.registerForm.value.uname,
+        this.registerForm.value.psw ).subscribe((result:any)=>{
+
+alert(result.message);
+this.router.navigateByUrl("")
+
+
+        },
+        result=>{
+          alert(result.error.message)
+        })
     }
     else{
-      alert("Password mismatch")
+      this.pswCheck=true
     }
 
     
