@@ -37,6 +37,9 @@ this.db.loginApi(
     alert("login successful")
 
     this.rout.navigateByUrl("home")
+
+    localStorage.setItem("currentAcno",result.currentAcno)
+    localStorage.setItem("currentUser",result.currentUser)
   },
   result=>{
     alert(result.error.message)
