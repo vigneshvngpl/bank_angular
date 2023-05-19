@@ -29,6 +29,28 @@ export class DataService {
     return this.http.post("http://localhost:3000/login",body)
   }
 
+  //api to access balance
+
+  balanceApi(acno:any){
+
+    return this.http.get("http://localhost:3000/balance/"+acno)
+  }
+
+  //api to get single user data
+
+  getUserApi(acno:any){
+
+    return this.http.get("http://localhost:3000/getUser/"+acno)
+  }
+
+  // api fund transfer
+
+  fundTransfer(toAcno:any,fromAcno:any,amount:any,psw:any,date:any){
+    const body={
+      toAcno,fromAcno,amount,psw,date
+    }
+    return this.http.post("http://localhost:3000/transfer",body)
+  }
 
 
 }
