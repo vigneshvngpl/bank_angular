@@ -10,6 +10,7 @@ import { HomeComponent } from './home/home.component';
 
 import { HttpClientModule } from'@angular/common/http'
 import { DatePipe } from '@angular/common';
+import { TransactionComponent } from './transaction/transaction.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { DatePipe } from '@angular/common';
     LoginComponent,
     RegisterComponent,
     HomeComponent,
+    TransactionComponent,
     
   ],
   imports: [

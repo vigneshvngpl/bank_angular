@@ -100,12 +100,13 @@ fundTransfer(){
 
 // To avoid sending money to same account
 if(this.acno==toAcno){
-  this.transactionStatus="From and to ACNT are same"
+  this.transactionStatus="From and to account same"
   
   //to change color of text in front end
   this.tStatus=false
 }
 else{
+  //giving arguments for created api and geting response
   this.ds.fundTransfer(toAcno,this.acno,amnt,psw,latest_date).subscribe(
     (result:any)=>{
       console.log(result.message);

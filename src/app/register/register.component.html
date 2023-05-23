@@ -25,7 +25,7 @@
                         <div class="underline"></div>
                         <label>Username</label>
                         <div *ngIf="(this.registerForm.get('uname')?.errors)&&(this.registerForm.get('uname')?.touched)">
-                            <p>should not include numbers</p>
+                            <p>Only contain alphabets</p>
                         </div>
                     </div>
                     <div class="input-data mt-5">
