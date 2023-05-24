@@ -19,17 +19,15 @@ getToken(){
   //header create
   const headers = new HttpHeaders()
   //check token in local storage
-
-  if(localStorage.getItem("token")){
+const token =JSON.parse(localStorage.getItem("token") || "")
+  if(token){
 
 //parse in angular must give or and a empty string
-    const token = JSON.parse(localStorage.getItem("token") || "")
-    options.headers.append("accessToken",token)
-    return options
+    
+    options.headers=headers.append("access_token",token)
+    
   }
-  else{
-    return options
-  }
+  return options
 }
 
   //register api-post
