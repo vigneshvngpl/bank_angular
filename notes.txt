@@ -1,0 +1,9 @@
+pipe creation
+--------------
+
+ng g pipe pipename
+
+//creating another folder for pipe in app folder(for neat structure)
+
+transform(argumnt.1(in which data we are going to apply),argument.2(input term credit or debit),argument 2(which data we are filtering )):any[]
+                                                                                                                                          type of return                  

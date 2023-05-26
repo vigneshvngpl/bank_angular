@@ -80,5 +80,12 @@ const token =JSON.parse(localStorage.getItem("token") || "")
     return this.http.get("http://localhost:3000/transaction/"+acno,this.getToken())
   }
 
+  //delete account
+
+  deleteAccount(acno:any){
+
+    return this.http.delete("http://localhost:3000/deleteAC/"+acno,this.getToken())
+  }
+
 
 }

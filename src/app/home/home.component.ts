@@ -16,6 +16,7 @@ balance:any
 userObject:any
 uname:any
 date:any
+Dacno:any
 
 //display  status
 transactionStatus:any
@@ -46,6 +47,7 @@ this.user=localStorage.getItem("currentUser")
 
     localStorage.removeItem("currentAcno")
     localStorage.removeItem("currentUser")
+    localStorage.removeItem("token")
     this.router.navigateByUrl("")
   }
 
@@ -132,6 +134,19 @@ else{
 
 }
 
+deleteClick(){
+this.Dacno=localStorage.getItem("currentAcno")
+}
+
+NoDelete(){
+  this.Dacno=""
+}
+yesDelete(event:any){
+  this.ds.deleteAccount(event).subscribe((result:any)=>{
+    alert(result.message)
+    this.logout()
+  })
+}
     
   }
 
